@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="author" content = "Torri Clarchick"/>
+<meta name="description" content="Project Number 1 for Web Design"/>
+<title>Add Course-Cactus Party University</title>
+<script type="text/javascript" src="AddCourseHandler.js"></script>
+<script src="https://www.w3schools.com/lib/w3.js"></script>
+	<script type="text/javascript">
+	
+	function openPageLink(evt, pageLink) {
+	  var i, tabcontent, tablinks;
+	  tabcontent = document.getElementsByClassName("tabcontent");
+	  for (i = 0; i < tabcontent.length; i++) {
+		tabcontent[i].style.display = "none";
+	  }
+	  tablinks = document.getElementsByClassName("tablinks");
+	  for (i = 0; i < tablinks.length; i++) {
+		tablinks[i].className = tablinks[i].className.replace(" active", "");
+	  }
+	  document.getElementById(pageLink).style.display = "block";
+	  evt.currentTarget.className += " active";
+	}
+
+	// Get the element with id="defaultOpen" and click on it
+	document.getElementById("defaultOpen").click();
+	</script>
+</head>
+<body>
+	<!-- Header at the top of the page also on all pages-->
+	<center><h1>Cactus Party University</h1></center>
+
+	<!-- centers and creates the tabs on the page-->
+	<center><div class="tab">
+	  <button class="tablinks" onclick="window.location.href='Default.html'">Home</button>
+	  <button class="tablinks" onclick="window.location.href='EnrollStudent.html'">Enroll Student</button>
+	  <button class="tablinks" onclick="window.location.href='AddInstructor.html'";>Add Instructor</button>
+	  <button class="tablinks" onclick="window.location.href='AddCourse.html'">Add Course</button>
+	  <button class="tablinks" onclick="window.location.href='RegisterCourse.html'">Register Course</button>
+	  <button class="tablinks" onclick="window.location.href='DropCourse.html'">Drop Course</button>
+	</div></center>
+	
+	<!-- Main page for Add Course-->
+	<center>
+		<h3>Add Course</h3>
+		<p><b>Please Fill out all fields below</b></p>
+
+		
+	 <!--This creates the form-->
+		<form name="addCourseForm" id="addCourseForm" action="">
+		<fieldset>
+			<legend>Course INformation</legend>
+			<label for="semester">Semester:</label>
+				<select id="semester" name="semester" required>
+					<option value="spring">Spring</option>
+					<option value="summer">Summer</option>
+					<option value="fall">Fall</option>
+				</select><br/><br/>
+			
+			<label for="year">Year:</label>
+				<input type="text" id="year" name="year" required size="10" placeholder="EX. 330" min="4" maxlength="4"><span class="validity"></span><br><br>
+				<p id="yearP"></p><br>
+			<label for="coursePrefix">Course Prefix:</label>
+				<input type="text" id="coursePrefix" name="coursePrefix" required size="10" placeholder="EX. CSCI" minlenght="3" maxlength="4"><span class="validity"></span><br><br>
+				<p id="coursePrefixP"></p><br>
+			<label for="courseNumber">Course Number:</label>
+				<input type="text" id="courseNumber" name="courseNumber" required size="10" placeholder="EX. 330" minlenght="3" maxlength="3"><span class="validity"></span><br><br>
+				<p id="courseNumberP"></p><br>
+			<label for="section">Section:</label>
+				<input type="text" id="section" name="section" required size="10" placeholder="EX. 01" minlenght="2" maxlength="2"><span class="validity"></span><br><br>
+				<p id="courseSectionP"></p><br>
+			<label for="courseName">Course Name:</label>
+				<input type="text" id="courseName" name="courseName" required size="10" placeholder="EX. Web Design" minlenght="4" maxlength="20"><span class="validity"></span><br><br>
+			
+			<label for="room">Room:</label>
+				<input type="text" id="room" name="room" placeholder="EX. Building, ###L" required size="10"  minlenght="1" maxlength="20"><span class="validity"></span><br><br>
+				<p id="roomP"></p><br>
+			<label for="daysOffered">Days Offered:</label>
+				<select id="daysOffered" name="daysOffered" required>
+					<option value="Monday/Wednesday/Friday">Monday/Wednesday/Friday</option>
+					<option value="Tuesday/Thursday">Tuesday/Thursday</option>
+					<option value="Monday">Monday</option>
+					<option value="Tuesday">Tuesday</option>
+					<option value="Wednesday">Wednesday</option>
+					<option value="Thursday">Thursday</option>
+				</select><br><br>
+			<div id="MWF" class="timeTable">
+<label for="time1">Monday/Wednesday/Friday:</label>
+<select id="time1" name="time1">
+<option value="M/W/F 8-8:50 AM">M/W/F 8-8:50 AM</option>
+<option value="M/W/F 9-9:50 AM">M/W/F 9-9:50 AM</option>
+<option value="M/W/F 10-10:50 AM">M/W/F 10-10:50 AM</option>
+<option value="M/W/F 11-11:50 AM">M/W/F 11-11:50 AM</option>
+<option value="M/W/F 12-12:50 PM">M/W/F 12-12:50 PM</option>
+<option value="M/W/F 1-1:50 PM">M/W/F 1-1:50 PM</option>
+<option value="M/W/F 2-2:50 PM">M/W/F 2-2:50 PM</option>
+<option value="M/W/F 3-3:50 PM">M/W/F 3-3:50 PM</option>
+</select>
+</div>
+
+<div id="TueThur" class="timeTable">
+<label for="time2">Tuesday/Thursday:</label>
+<select id="time2" name="time2">
+<option value="T/TH 8-9:15 AM">T/TH 8-9:15 AM</option>
+<option value="T/TH 9:30-10:45 AM">T/TH 9:30-10:45 AM</option>
+<option value="T/TH 11 AM-12:15 PM">T/TH 11 AM-12:15 PM</option>
+<option value="T/TH 1-2:15 PM">T/TH 1-2:15 PM</option>
+<option value="T/TH 2:30-3:45 PM">T/TH 2:30-3:45 PM</option>
+</select>
+</div>
+
+<div id="anyDayTime" class="timeTable">
+<label for="time3">Any single day:</label>
+<select id="time3" name="time3">
+<option value="1-4 PM">1-4 PM</option>
+<option value="2-5 PM">2-5 PM</option>
+<option value="7-9:30 PM">7-9:30 PM</option>
+</select>
+</div><br/>
+			<label for="credithours">Credit Hours:</label>
+				<input type="text" id="credithours" name="credithours" required size="10" placeholder="EX. 03" minlenght="1" maxlength="1"><span class="validity"></span><br><br>
+				<p id="credithoursP"></p><br>
+			<label for="instructorsfirstname">Instructor's First Name:</label>
+				<input type="text" id="iFName" name="iFName" size="10" placeholder="EX. Luke" minlenght="2" maxlength="30" required><span class="validity"></span><br><br>
+				<p id="iFNameP"></p><br>
+			<label for="instructorslastname">Instructor's Last Name:</label>
+				<input type="text" id="iLName" name="iLName" size="10" placeholder="EX. Smith" minlenght="2" maxlength="30" required><span class="validity"></span><br><br>
+				<p id="iLNameP"></p><br>
+			<label for="enrollmentcap">Enrollment Cap:</label>
+				<input type="text" id="enrollmentcap" name="enrollmentcap" required size="10" placeholder="EX. 25" minlenght="2" maxlength="3"><span class="validity"></span><br><br>
+				<p id="enrollmentcapP"></p><br>
+			<input type="submit" value="Submit">
+		</form>
+	</center>
+<script type = "text/javascript" src="addCourseReg.js"></script>	
+</fieldset>
+
+</body>
+</html> 
+<!-- CSS Style for tabs and forms -->
+<style>
+body {font-family: Arial;}
+
+
+/*style the submit button*/
+#Button1 {
+font-weight: bold;
+background-color: #A9A9A9;
+font-size: 18px;
+color: #000000;
+}
+
+#Button1:hover {
+background-color: #696969;}
+
+
+INPUT#tb1{
+color:#636768;
+float: left;
+}
+
+INPUT#tb1:focus{
+border:2px solid green;
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #808080;
+  background-color: #DCDCDC;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: #DCDCDC;
+  float: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #D0D0D0;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #C0C0C0;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #808080;
+  border-top: none;
+}
+
+
+</style>
+
