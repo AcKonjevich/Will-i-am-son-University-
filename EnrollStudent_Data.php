@@ -31,5 +31,6 @@
 	<pre></pre>
 	
 	<button onclick="document.location='EnrollStudent.php'" style="background-color:#002469; font-family: Gotham, 'Helvetica Neue', Helvetica, Arial, 'sans-serif'; color: white">BACK</button>
+	<?php include 'footer.php';?>
 </body>
 </html>

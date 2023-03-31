@@ -27,6 +27,6 @@
 		echo "<p>Course Section: " . $course_section . "</p>";
 	}
 ?>
-
+<?php include 'footer.php';?>
 </body>
 </html>
