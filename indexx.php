@@ -21,7 +21,9 @@
         elseif (strcmp($login, $Student) == 0)
             header("Location:home.html");
         else {
-            print "You did not input a valid username";
+            echo '<script>alert("You did not input a valid username");
+            window.location.replace("index.html")
+            </script>';
         }
     ?>
 </body>

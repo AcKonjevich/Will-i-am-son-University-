@@ -34,6 +34,7 @@ $enrollment_header = "Enrollment Cap";
         <!-- This is where the course data will go -->
       </tbody>
     </table>
+    <?php include 'footer.php';?>
   </body>
 </html>
 

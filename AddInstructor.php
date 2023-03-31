@@ -35,6 +35,7 @@
 			<input type="reset" class="mc" name="reset" />
 		</form>
 		<script src="submit.js"></script>
-		<a href="homepage.html">Back</a>
+		<a href="home.html">Back</a><br>
+		<?php include 'footer.php';?>
     </body>
 </html>

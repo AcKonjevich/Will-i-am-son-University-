@@ -21,7 +21,7 @@
 			<option value="summer">Summer 2024</option>
 		</select> 
 		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-		<button type="submit" style="background-color:#002469; font-family: Gotham, 'Helvetica Neue', Helvetica, Arial, 'sans-serif'; color: white">VIEW STUDENTS</button>
+		<button type="submit" class ="mc">VIEW STUDENTS</button>
 	</form>
 	<br>
 	<pre></pre>
@@ -33,5 +33,6 @@
 			<th>Section</th>
 		</tr>
 	</table>
+	<?php include 'footer.php';?>
 </body>
 </html>

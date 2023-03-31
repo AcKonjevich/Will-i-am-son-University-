@@ -112,6 +112,7 @@
 
         <button type="button" id="confirm" style="background-color:#002469; font-family: Gotham, 'Helvetica Neue', Helvetica, Arial, 'sans-serif'; color: white">SUBMIT</button>
 
+        <br><?php include 'footer.php';?>
         <script>
             
             function yearValid(){

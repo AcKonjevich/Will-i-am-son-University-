@@ -73,7 +73,8 @@ mysqli_close($conn);
     </table>
 	  <br>
 	  <pre></pre>
-	<a href='home.php'><button type="button" style="background-color:#002469; font-family: Gotham, 'Helvetica Neue', Helvetica, Arial, 'sans-serif'; color: white">BACK</button><a/>
+	<a href='home.php'><button type="button" style="background-color:#002469; font-family: Gotham, 'Helvetica Neue', Helvetica, Arial, 'sans-serif'; color: white">BACK</button></a>
+  <?php include 'footer.php';?>
   </body>
 </html>
 

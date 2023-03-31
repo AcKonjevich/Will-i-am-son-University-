@@ -61,6 +61,7 @@ echo "</select>";
         <!-- This is where the student data will go -->
       </tbody>
     </table>
+    <?php include 'footer.php';?>
   </body>
 </html>
 

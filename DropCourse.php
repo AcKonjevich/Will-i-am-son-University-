@@ -50,7 +50,7 @@
             <input type="SUBMIT" name="SUBMIT" class = "mc" id="submit">
 			<a href="homepage.html"><button style="background-color:#002469; font-family: Gotham, 'Helvetica Neue', Helvetica, Arial, 'sans-serif'; color: white">Return Home</button></a>
         </form>
-		
+		<?php include 'footer.php';?>
         <script>
             function validate_First_Name() {
                 var First_Name = document.getElementById("first_name");

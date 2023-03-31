@@ -41,5 +41,6 @@
 		</form>
 		<script src="submit.js"></script>
 		<a href="homepage.html">Back</a>
+		<?php include 'footer.php';?>
     </body>
 </html>

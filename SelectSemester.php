@@ -18,5 +18,6 @@
 		<pre></pre>
 		<button type="submit" style="background-color:#002469; font-family: Gotham, 'Helvetica Neue', Helvetica, Arial, 'sans-serif'; color: white">VIEW STUDENTS</button>
 	</form>
+	<?php include 'footer.php';?>
 </body>
 </html>
