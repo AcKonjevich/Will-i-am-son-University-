@@ -7,7 +7,7 @@
 		<script src="addInstructorValidator.js"></script>
     </head>
     <body>
-		<h2>New Instructor</h2>
+		<h2 class = "bluestripe">New Instructor</h2>
 		<?php
 			include 'session.php';
 

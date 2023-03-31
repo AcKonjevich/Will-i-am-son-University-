@@ -7,7 +7,7 @@
 
     </head>
     <body>
-        <h1>Drop Course</h1>
+        <h2 class = "bluestripe">Drop Course</h2>
         <?php
 			include 'session.php';
 
@@ -57,7 +57,6 @@
 			<pre></pre>
             
             <input type="SUBMIT" name="SUBMIT" class = "mc" id="submit">
-			<a href="home.php"><button style="background-color:#002469; font-family: Gotham, 'Helvetica Neue', Helvetica, Arial, 'sans-serif'; color: white">Return Home</button></a>
         </form>
 		<?php include 'footer.php';?>
         <script>

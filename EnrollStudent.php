@@ -9,6 +9,7 @@
 </head>
 
 <body>
+	<h2 class ="bluestripe">Enroll Student</h2>
 	<?php
 		include 'session.php';
 
@@ -18,8 +19,6 @@
 		exit();
 		}
 	?>
-	<h1 style="background-size:cover;">Enroll Student</h1>
-	
 	<form>
 		<label for="First_Name">Student’s First Name: </label>
 		<input type="text" id="First_Name" name="Student's_First_Name">

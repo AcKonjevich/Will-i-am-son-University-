@@ -10,6 +10,7 @@
 	<h1>Add Course Data</h1>
 	
 	<?php
+	include 'session.php';
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$semester = $_POST['semester'];
 			$year = $_POST['year'];

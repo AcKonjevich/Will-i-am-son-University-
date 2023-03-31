@@ -10,6 +10,7 @@
 	<h1>Enroll Student Data</h1>
 	
 	<?php
+	include 'session.php';
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$firstName = $_POST["Student's_First_Name"];
 			$lastName = $_POST["Student's_Last_Name"];

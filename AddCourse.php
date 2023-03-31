@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <h2 class ="bluestripe">Add Course</h2>
     <?php
 		include 'session.php';
 
@@ -18,7 +19,6 @@
             exit();
 		}
 	?>
-    <h1>Add Course</h1>
     <form name="courseForm" id="courseForm">
         <label for="sem">Semester:</label>
         <select name="Semester" id="sem" required><br>

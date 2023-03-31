@@ -8,6 +8,7 @@
 <body>
 	<h2 class="bluestripe">New Instructor</h2>
 	<?php
+	include 'session.php';
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		echo "<p>Instructor's First Name: " . $_POST["first"] . "</p>";
 		echo "<p>Instructor's Last Name: " . $_POST["last"] . "</p>";
