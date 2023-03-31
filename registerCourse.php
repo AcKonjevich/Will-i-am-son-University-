@@ -16,7 +16,7 @@
 			<input type="text" id="last"></label><br>
 				
 			<label>Semester*<br>
-			<select id = "semester">
+			<select>
 				<option>Spring</option>
 				<option>Summer</option>
 				<option>Fall</option>
@@ -36,8 +36,8 @@
 
 			<p>*<span class="required">Required Field</span></p>
 
-			<input type="submit" class = "mc" name="submit" /><br>
-			<input type="reset" class = "mc" name="reset" />
+			<input type="submit" name="submit" /><br>
+			<input type="reset" name="reset" />
 		</form>
 		<script src="submit.js"></script>
 		<a href="homepage.html">Back</a>

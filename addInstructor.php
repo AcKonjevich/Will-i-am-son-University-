@@ -19,7 +19,7 @@
 			<input type="text" id="department"/></label><br>
 				
 			<label>Instructor's Rank<br>
-			<select id = "rank">
+			<select>
 				<option>Instructor</option>
 				<option>Assistant Professor</option>
 				<option>Associate Professor</option>
@@ -31,8 +31,8 @@
 
 			<p>*<span class="required">Required Field</span></p>
 
-			<button type="submit" class = "mc" id="submit">Submit</button><br>
-			<input type="reset" class = "mc" name="reset" />
+			<button type="submit" id="submit">Submit</button><br>
+			<input type="reset" name="reset" />
 		</form>
 		<script src="submit.js"></script>
 		<a href="homepage.html">Back</a>
