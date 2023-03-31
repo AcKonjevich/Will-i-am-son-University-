@@ -1,6 +1,7 @@
 function checkName() {
     var firstName = document.getElementById("first");
     var lastName = document.getElementById("last");
+    var semester = document.getElementById("semester");
     var year = document.getElementById("year");
     var prefix = document.getElementById("coursePrefix");
     var number = document.getElementById("courseNumber");
@@ -61,7 +62,7 @@ function checkName() {
         return false;
     }
 
-    else if(number.value.search(/^[1-4]\d{2}$/) != 0) {
+    else if(number.value.search(/^[0-4]\d{2}$/) != 0) {
         alert("Course number must be a three digit number less than 500")
         return false;
     }
@@ -79,6 +80,8 @@ function checkName() {
 
     /*Valid*/
     else {
+        alert("Student Name: " + firstName.value + " " + lastName.value + "\nSemester: " + semester.value + "\nYear: " + year.value + "\nCourse: " 
+        + prefix.value + " " + number.value + "-" + section.value);
         return true;
     }
 
