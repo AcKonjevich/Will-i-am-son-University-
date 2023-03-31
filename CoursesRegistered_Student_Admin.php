@@ -3,13 +3,13 @@ session_start();
 
 // Check if the user is logged in and redirect to the login page if not
 if (!isset($_SESSION["username"])) {
-  header("Location: login.php");
+  header("Location: index.html");
   exit();
 }
 
 // Check if the user is an admin
 if ($_SESSION["user_type"] != "admin") {
-  header("Location: index.php");
+  header("Location: home.php");
   exit();
 }
 

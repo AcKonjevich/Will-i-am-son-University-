@@ -1,4 +1,15 @@
 <?php
+
+if (!isset($_SESSION["username"])) {
+  header("Location: index.html");
+  exit();
+}
+
+// Check if the user is an admin
+if ($_SESSION["user_type"] != "admin") {
+  header("Location: home.php");
+  exit();
+}
 // Retrieve list of all instructors
 // Code to retrieve the list of instructors from the database goes here
 $instructors = array("Instructor A", "Instructor B", "Instructor C");
