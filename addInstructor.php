@@ -7,7 +7,7 @@
 		<script src="addInstructorValidator.js"></script>
     </head>
     <body>
-		<h2 class ="bluestripe">New Instructor</h2>
+		<h2>New Instructor</h2>
 		<form id="form" action="">
 			<label>Instructor's First Name*<br>
 			<input type="text" id="first" /></label><br>
@@ -19,7 +19,7 @@
 			<input type="text" id="department"/></label><br>
 				
 			<label>Instructor's Rank<br>
-			<select id = "rank">
+			<select>
 				<option>Instructor</option>
 				<option>Assistant Professor</option>
 				<option>Associate Professor</option>
@@ -35,6 +35,6 @@
 			<input type="reset" name="reset" />
 		</form>
 		<script src="submit.js"></script>
-		<a href="home.html">Back</a>
+		<a href="homepage.html">Back</a>
     </body>
 </html>

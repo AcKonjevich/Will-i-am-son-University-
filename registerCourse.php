@@ -7,9 +7,7 @@
 		<script src="registerCourseValidator.js"></script>
     </head>
     <body>
-		<header>
-			<h1>Register Course</h1>
-		</header>
+		<h2 class = "bluestripe">Register Course</h2>
 		<form id="form" action="">
 			<label>Student's First Name*<br>
 			<input type="text" id="first"></label><br>
@@ -18,7 +16,7 @@
 			<input type="text" id="last"></label><br>
 				
 			<label>Semester*<br>
-			<select id="semester">
+			<select>
 				<option>Spring</option>
 				<option>Summer</option>
 				<option>Fall</option>
@@ -38,10 +36,10 @@
 
 			<p>*<span class="required">Required Field</span></p>
 
-			<input type="submit" class ="mc" name="Submit" />
-			<input type="reset" class ="mc" name="reset" />
+			<input type="submit" name="submit" /><br>
+			<input type="reset" name="reset" />
 		</form>
 		<script src="submit.js"></script>
-		<a href="home.html">Back</a>
+		<a href="homepage.html">Back</a>
     </body>
 </html>
