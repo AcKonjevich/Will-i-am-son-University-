@@ -16,7 +16,7 @@
 			<input type="text" id="last"></label><br>
 				
 			<label>Semester*<br>
-			<select>
+			<select id = "semester">
 				<option>Spring</option>
 				<option>Summer</option>
 				<option>Fall</option>

@@ -19,7 +19,7 @@
 			<input type="text" id="department"/></label><br>
 				
 			<label>Instructor's Rank<br>
-			<select>
+			<select id = "rank">
 				<option>Instructor</option>
 				<option>Assistant Professor</option>
 				<option>Associate Professor</option>
