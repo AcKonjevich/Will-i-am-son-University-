@@ -36,9 +36,7 @@ function checkName() {
         return false;
     }
 
-    else {
-        alert("Name: " + firstName.value + " " + lastName.value + "\nDepartment: " + department.value + "\nRank: " + rank.value + "\nEmail: " + email.value);
+    else 
         return true;
-    }
-
+    
 }

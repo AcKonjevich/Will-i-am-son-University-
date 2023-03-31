@@ -79,10 +79,8 @@ function checkName() {
     }
 
     /*Valid*/
-    else {
-        alert("Student Name: " + firstName.value + " " + lastName.value + "\nSemester: " + semester.value + "\nYear: " + year.value + "\nCourse: " 
-        + prefix.value + " " + number.value + "-" + section.value);
+    else 
         return true;
-    }
+    
 
 }

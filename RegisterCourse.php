@@ -8,36 +8,36 @@
     </head>
     <body>
 		<h2 class = "bluestripe">Register Course</h2>
-		<form id="form" action="">
+		<form id="form" action="RegisterCourse_Data.php" method="post">
 			<label>Student's First Name*<br>
-			<input type="text" id="first"></label><br>
+			<input type="text" name="first"></label><br>
 				
 			<label>Student's Last Name*<br>
-			<input type="text" id="last"></label><br>
+			<input type="text" name="last"></label><br>
 				
 			<label>Semester*<br>
-			<select id = "semester">
+			<select name = "semester">
 				<option>Spring</option>
 				<option>Summer</option>
 				<option>Fall</option>
 			</select></label><br>
 				
 			<label>Year*<br>
-			<input type = "text" id="year"></label><br>
+			<input type = "text" name="year"></label><br>
 				
 			<label>Course Prefix*<br>
-			<input type="text" id="coursePrefix"></label><br>
+			<input type="text" name="coursePrefix"></label><br>
 				
 			<label>Course Number*<br>
-			<input type="text" id="courseNumber"></label><br>
+			<input type="text" name="courseNumber"></label><br>
 				
 			<label>Course Section*<br>
-			<input type="text" id="courseSection"></label><br>
+			<input type="text" name="courseSection"></label><br>
 
 			<p>*<span class="required">Required Field</span></p>
 
-			<input type="submit" name="submit" /><br>
-			<input type="reset" name="reset" />
+			<input type="submit" class="mc" name="submit" /><br>
+			<input type="reset" class="mc" name="reset" />
 		</form>
 		<script src="submit.js"></script>
 		<a href="homepage.html">Back</a>
