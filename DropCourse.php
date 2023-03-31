@@ -18,7 +18,7 @@
 			<pre></pre>
             
             <label>Semester:</label>
-            <select = name="semester" id="semester">
+            <select  name="semester" id="semester">
                 <option>Spring</option>
                 <option>Summer</option>
                 <option>Fall</option>
@@ -26,7 +26,7 @@
 			<pre></pre>
             
             <label>Year:</label>
-            <select = name="year" id="year">
+            <select  name="year" id="year">
                 <option>2023</option>
                 <option>2024</option>
                 <option>2025</option>
@@ -126,9 +126,9 @@
             }
             document.getElementById("first_name").onsubmit = validate_First_Name();
             document.getElementById("last_name").onsubmit = validate_Last_Name();
-            document.getElementById("course_prefix").onsubmit = validate_Course_Prefix;
-            document.getElementById("course_number").onsubmit = validate_Course_Number;
-            document.getElementById("course_section").onsubmit = validate_Course_Section;
+            document.getElementById("course_prefix").onsubmit = validate_Course_Prefix();
+            document.getElementById("course_number").onsubmit = validate_Course_Number();
+            document.getElementById("course_section").onsubmit = validate_Course_Section();
             document.getElementById("submit") = info_form();
             
 

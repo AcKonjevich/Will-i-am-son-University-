@@ -161,7 +161,7 @@
 
             function roomValid(){
                 var roomVal = document.getElementById("room").value;
-                var validRoom = roomVal.search(/^[A-Z][a-z]+, ?[0-9]{2,3}[A-Za-z]?$/);
+                var validRoom = roomVal.search(/^[A-Za-z0-9]+(\s[A-Za-z0-9]+)*\s[0-9]{2,3}[A-Za-z]?/);
                 if (Number(validRoom) == -1){
                     return false;
                 } else {
