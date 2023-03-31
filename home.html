@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Home Page</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+  background-color: rgba(0, 47, 150, 0.733);
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: left;
+  width: 30%;
+  height: 300px; /* only for demonstration, should be removed */
+  background: #ccc;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  background-color: #f1f1f1;
+  height: 300px; /* only for demonstration, should be removed */
+}
+
+/* Clear floats after the columns */
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+footer {
+  background-color: #051eacab;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h2>Home Page</h2>
+</header>
+
+<section>
+  <nav>
+    <ul>
+      <li><a href="Module2_EnrollStudent.html">Enroll Student</a></li>
+      <li><a href="addInstructor.html">Add Instructor</a></li>
+      <li><a href="addC.html">Add Course</a></li>
+      <li><a href="registerCourse.html">Register Course</a></li>
+      <li><a href="dropcourse.html">Drop Course</a></li>
+      <li><a href="userManual.html">User Manuel</a></li>
+      <li><a href="programmersManual.html">Programmer Manuel</a></li>
+    </ul>
+  </nav>
+  
+  <article>
+    <h1>Campus</h1>
+    <p>This campus is full of history, knowledge, and excitement, to which our students are able to use to grow.</p>
+    <p>Even though there our graduating seniors leave with the knowledge given to them, our new students get to continue the process all over again.</p>
+  </article>
+</section>
+
+<footer>
+  <p>Welcome to MC!</p>
+</footer>
+
+</body>
+</html>
+
