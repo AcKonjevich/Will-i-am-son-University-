@@ -32,8 +32,7 @@
 			echo "<p>Time: $time</p>";
 		}
 	?>
-
-	<a href="home.html">Back</a><br>
+	<br>
 	<?php include 'footer.php';?>
 	
 </body>

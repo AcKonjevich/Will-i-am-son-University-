@@ -17,7 +17,7 @@
 	}
 	?>
 
-	<a href="home.html">Back</a><br>
+	<br>
 	<?php include 'footer.php';?>
 </body>
 </html>

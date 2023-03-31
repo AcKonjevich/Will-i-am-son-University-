@@ -1,21 +1,16 @@
 <?php
-// Check if the user is logged in and redirect to the login page if not
-if (!isset($_SESSION["username"])) {
-  header("Location: index.html");
-  exit();
-}
+		include 'session.php';
 
-// Check if the user is an admin
-if ($_SESSION["user_type"] != "admin") {
-  header("Location: home.php");
-  exit();
-}
-
+		// Check if the user is an admin
+		if ($_SESSION["user"] != "Admin" && $_SESSION["user"] != "Instructor") {
+            header("Location: home.php");
+            exit();
+		}
 // Connect to the database
 // ...
 
 // Get the Instructor's ID
-$instructor_id = $_SESSION['id'];
+/*$instructor_id = $_SESSION['user'];
 
 // Retrieve the list of courses taught by the Instructor from the database
 $courses_query = "SELECT * FROM courses WHERE instructor_id = $instructor_id";
@@ -27,6 +22,7 @@ while ($course = mysqli_fetch_assoc($courses_result)) {
     echo "<option value='" . $course['id'] . "'>" . $course['name'] . "</option>";
 }
 echo "</select>";
+*/
 
 ?>
 

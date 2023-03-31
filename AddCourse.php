@@ -9,6 +9,15 @@
 </head>
 
 <body>
+    <?php
+		include 'session.php';
+
+		// Check if the user is an admin
+		if ($_SESSION["user"] != "Admin" && $_SESSION["user"] != "Instructor") {
+            header("Location: home.php");
+            exit();
+		}
+	?>
     <h1>Add Course</h1>
     <form name="courseForm" id="courseForm">
         <label for="sem">Semester:</label>

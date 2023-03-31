@@ -8,6 +8,15 @@
     </head>
     <body>
 		<h2 class = "bluestripe">Register Course</h2>
+		<?php
+			include 'session.php';
+
+			// Check if the user is an admin
+			if ($_SESSION["user"] != "Admin" && $_SESSION["user"] != "Student") {
+				header("Location: home.php");
+				exit();
+			}
+		?>
 		<form id="form" action="RegisterCourse_Data.php" method="post">
 			<label>Student's First Name*<br>
 			<input type="text" name="first"></label><br>
@@ -40,7 +49,6 @@
 			<input type="reset" class="mc" name="reset" />
 		</form>
 		<script src="submit.js"></script>
-		<a href="homepage.html">Back</a>
 		<?php include 'footer.php';?>
     </body>
 </html>

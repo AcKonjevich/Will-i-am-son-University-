@@ -8,6 +8,15 @@
     </head>
     <body>
         <h1>Drop Course</h1>
+        <?php
+			include 'session.php';
+
+			// Check if the user is an admin
+			if ($_SESSION["user"] != "Admin" && $_SESSION["user"] != "Student") {
+				header("Location: home.php");
+				exit();
+			}
+		?>
         <form>
             <label for="first_name">First Name:</label>
             <input type="text" id="first_name" name="first_name"><br>
@@ -48,7 +57,7 @@
 			<pre></pre>
             
             <input type="SUBMIT" name="SUBMIT" class = "mc" id="submit">
-			<a href="homepage.html"><button style="background-color:#002469; font-family: Gotham, 'Helvetica Neue', Helvetica, Arial, 'sans-serif'; color: white">Return Home</button></a>
+			<a href="home.php"><button style="background-color:#002469; font-family: Gotham, 'Helvetica Neue', Helvetica, Arial, 'sans-serif'; color: white">Return Home</button></a>
         </form>
 		<?php include 'footer.php';?>
         <script>

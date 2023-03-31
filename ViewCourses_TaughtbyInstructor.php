@@ -1,4 +1,11 @@
 <?php
+		include 'session.php';
+
+		// Check if the user is an admin
+		if ($_SESSION["user"] != "Admin" && $_SESSION["user"] != "Instructor") {
+            header("Location: home.php");
+            exit();
+		}
 $prefix_header = "Course Prefix";
 $number_header = "Course Number";
 $section_header = "Section";

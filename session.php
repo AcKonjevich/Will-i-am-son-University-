@@ -7,18 +7,11 @@
     </head>
 <body>
     <?php
-    if(isset($_SESSION["user"]))
-    {
-        if(time(-$_SESSION["login_time_stamp"] > 300))
-        {
-            session_unset();
-            session_destroy();
-            header("Location:index.html")
-        }
-    }
-    else
-    {
+    session_start();
+    $user = $_SESSION["user"];
+    echo "<p> Hello, $user </p>";
+    echo '<a style=color:red; href=index.html>Logout </a>';
+    if(!isset($_SESSION["user"]))
         header("Location:index.html")
-    }
     ?>
 </body>

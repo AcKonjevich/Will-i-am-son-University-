@@ -1,3 +1,3 @@
 <?php
-echo "<a href='home.html'>Home Page</a>"
+echo "<a href='home.php'>Home</a>";
 ?>

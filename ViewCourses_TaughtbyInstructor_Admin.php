@@ -1,12 +1,12 @@
 <?php
-
-if (!isset($_SESSION["username"])) {
+include 'session.php';
+if (!isset($_SESSION["user"])) {
   header("Location: index.html");
   exit();
 }
 
 // Check if the user is an admin
-if ($_SESSION["user_type"] != "admin") {
+if ($_SESSION["user"] != "Admin") {
   header("Location: home.php");
   exit();
 }

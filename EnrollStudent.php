@@ -9,6 +9,15 @@
 </head>
 
 <body>
+	<?php
+		include 'session.php';
+
+		// Check if the user is an admin
+		if ($_SESSION["user"] != "Admin") {
+		header("Location: home.php");
+		exit();
+		}
+	?>
 	<h1 style="background-size:cover;">Enroll Student</h1>
 	
 	<form>
@@ -40,7 +49,6 @@
 			<br />
 	
 		<input type="SUBMIT" style="background-color:#002469; font-family: Gotham, 'Helvetica Neue', Helvetica, Arial, 'sans-serif'; color: white" value="SUBMIT" onclick="displayInfo()">
-		<button onclick="document.location='home.html'" style="background-color:#002469; font-family: Gotham, 'Helvetica Neue', Helvetica, Arial, 'sans-serif'; color: white">HOME PAGE</button>
 	</form>
 	<?php include 'footer.php';?>
 	
@@ -54,21 +62,21 @@
 			
 		if (firstName === '') {
 			alert('Please enter your first name');
-			return;
+			return false;
 		  } 
 		  if (lastName === '') {
 			alert('Please enter your last name');
-			return;
+			return false;
 		  }
 		  if (emailAddress === '') {
 			alert('Please enter your email address');
-			return;
+			return false;
 		  }
 			
 		const emailRegex = /^[a-zA-Z]{3}\d{3}@marietta\.edu$/;
 		  if (!emailRegex.test(emailAddress)) {
 			alert('Please enter a valid email address');
-			return;
+			return false;
 		  }
 			
 		const popup = window.open("", "Popup", "width=800,height=400");

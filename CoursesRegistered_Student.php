@@ -1,4 +1,11 @@
 <?php
+			include 'session.php';
+
+			// Check if the user is an admin
+			if ($_SESSION["user"] != "Admin" && $_SESSION["user"] != "Student") {
+				header("Location: home.php");
+				exit();
+			}
 // Start the PHP session and include any required files here
 
 // Check if the user is logged in and redirect to the login page if not

@@ -1,20 +1,14 @@
 <?php
-session_start();
-
-// Check if the user is logged in and redirect to the login page if not
-if (!isset($_SESSION["username"])) {
-  header("Location: index.html");
-  exit();
-}
+include 'session.php';
 
 // Check if the user is an admin
-if ($_SESSION["user_type"] != "admin") {
+if ($_SESSION["user"] != "Admin") {
   header("Location: home.php");
   exit();
 }
 
 // Connect to the database
-$dbhost = "localhost";
+/*$dbhost = "localhost";
 $dbuser = "root";
 $dbpass = "";
 $dbname = "mydb";
@@ -43,6 +37,7 @@ if (mysqli_num_rows($result) > 0) {
 
 // Close the database connection
 mysqli_close($conn);
+*/
 ?>
 
 <!DOCTYPE html>
