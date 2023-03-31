@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+    
     <head>
         <h1><title>Drop Course</title></h1>
         <script type="text/javascript"></script>
