@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Programmer's Manual</title>
+		<meta charset="utf-8"/>
+		
+		<style>
+		p.ex {
+			max-width: 50%;
+		}
+		</style>
+    </head>
+    <body>
+
+	<h1>Programmer's Manual</h1>
+	<pre>
+<a href = "#overview">Overview</a>
+<a href = "#htmlpages">HTML Pages</a>
+	<a href = "#homepage">homepage.html</a>
+	<a href = "#enroll">CSCI330_Module1_EnrollStudent.html</a>
+	<a href = "#instructor">addInstructor.html</a>
+	<a href = "#addcourse">addC.html</a>
+	<a href = "#registercourse">registerCourse.html</a>
+	<a href = "#dropcourse">dropcourse.html</a>
+	</pre>
+		
+	<h2 id = "overview">Overview</h2>
+		<p class = "ex">The course registration system utilizes HTML to create a web interface that allows the user to navigate through various separate pages. The homepage 
+		contains hyperlinks to all other pages while each page contains a hyperlink to return to the homepage. 
+		
+		Currently, the forms do not store any input, and no database yet exists to store data entries. The HTML is purely the front-end, with no back-end implemented.
+		</p>
+
+	<h2 id = "htmlpages">HTML Pages</h2>
+	
+	<h3 id = "homepage">homepage.html</h3>
+		<p class = "ex">The current CSS for the home page is just a placeholder for future modifications to organize the webpage in a more professional manner. All that is inside of the 
+		head tags is the CSS that will eventually become finished work, this includes the placement of the sections with tags such as, header, nav, nav ul, article section, 
+		and footer. Regarding the body, the header, section, and footer contain the bulk of the page. The header contains the page name, the section contains all of the links 
+		to the website, and the footer is just there for decoration and to fill white space, as well as the article tag. For more detail, the links with their respective 
+		files are ordered as such: Enroll Student (CSCI330_Module1_EnrollStudent.html), Add Instructor (addInstructor.html), Register Course (registerCourse.html), Drop 
+		Course (dropcourse.html), User Manual (), and Programmer Manual ().
+		</p>
+	
+	<h3 id = "enroll">CSCI330_Module1_EnrollStudent.html</h3>
+		<p class = "ex">The Enroll Student HTML page contains a header titled “Enroll Student.” The form has labels for The student's first name, last name, year, major, and email address. 
+			The student’s year is a select dropdown menu for Freshmen, Sophomore, Junior, and Senior. All other labels are text inputs. There are two buttons at the end of the page for 
+			submitting and returning to the home page. The submit button does not yet do anything, but the Home Page button links to the home page. (Module2_EnrollStudent.html).
+		</p>
+	
+	<h3 id = "instructor">addInstructor.html</h3>
+		<p class = "ex">The addInstructor HTML page contains a header and a form. The header contains references to a stylesheet named style.css and a javascript file named 
+			addInstructorValidator.js. The form has labels for Instructor’s First Name, Instructor’s Last Name, Instructor’s Department, Instructor’s Rank, and Instructor’s 
+			Email Address. The Instructor’s Rank label is a select dropdown that contains all current instructor ranks. All other labels are text inputs. There are two buttons 
+			at the end of the type submit and reset. The end of a file contains another javascript file named submit.js. This will call the form ID and reference the function 
+			of checkName in the addInstructorValidator.js file.<br><br>
+			<code>checkName() - this function has a separate if or else if for every field that requires validation. The if-else structure was chosen because if any validation 
+			check fails, the form will not submit so one control structure was used for the entire form. The usage of isNaN() was used to determine whether the entered value was 
+			an integer.</code>
+			
+		</p>
+
+	<h3 id = "addcourse">addC.html</h3>
+		<p class = "ex">The add course page is very simple in its current state.  The page only has some HTML code within the body.  Form elements are used such as buttons, text input boxes, 
+		and dropdown menus with different options.  The text input element is used for the course prefix, number, section, name, room, credit hours, the instructor's first/last 
+		name, and the enrollment cap.  The dropdown element is used for the semester, days, and times for those classes.  There's a button to “submit” which currently does not 
+		do anything.  There is also a header at the top as well as a link back to the homepage. 
+		</p>
+		
+	<h3 id = "registercourse">registerCourse.html</h3>
+		<p class = "ex">The addInstructor HTML page contains a header and a form. The header contains references to a stylesheet named style.css and a javascript file named 
+			registerCourseValidator.js. The form has labels for Student’s First Name, Student’s Last Name, Semester, Year, Course Prefix, Course Number, and Course Section. 
+			The Semester label is a select dropdown that contains all semesters. All other labels are text inputs. There are two buttons at the end of the type submit and reset. 
+			The end of a file contains another javascript file named submit.js. This will call the form ID and reference the function of checkName in the registerCourseValidator.js 
+			file.<br><br>
+			<code>checkName() - this function has a separate if or else if for every field that requires validation. The if-else structure was chosen because if any validation 
+			check fails, the form will not submit so one control structure was used for the entire form. The usage of isNaN() was used to determine whether the entered value 
+			was an integer.</code>
+		</p>
+	<h3 id = "dropcourse">dropcourse.html</h3>
+		<p class = "ex">The head of the page and the header both contain the title of the page “Drop Course”. The body consists of six text forms and a submit button with the order being, 
+		First name, Last name, Semester, Course Prefix, Course Number, Course Section, and Submit. Each of these names are the respective labels for each form and button. At 
+		the top of the page is also a return home button, labeled “Return Home”, which will transport the user to the homepage (homepage.html).
+		</p>
+		<ul>
+			<li>Form elements used:
+				<ul>
+					<li>Text</li>
+					<li>Button</li>
+					<li>Label</li>
+				</ul>
+			</li>
+			<li>Drop Course Page Text & Button Elements IDs (descending order):
+				<ul>
+					<li>first_name</li>
+					<li>last_name</li>
+					<li>semester</li>
+					<li>course_prefix</li>
+					<li>course_number</li>
+					<li>course_section</li>
+					<li>submit</li>
+				</ul>
+			</li>
+		</ul>
+
+		
+	<a href="homepage.html">Back</a>
+    </body>
+</html>
