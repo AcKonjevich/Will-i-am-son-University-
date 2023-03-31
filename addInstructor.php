@@ -31,8 +31,8 @@
 
 			<p>*<span class="required">Required Field</span></p>
 
-			<button type="submit" id="submit">Submit</button><br>
-			<input type="reset" name="reset" />
+			<button type="submit" class="mc" id="submit">Submit</button><br>
+			<input type="reset" class ="mc" name="reset" />
 		</form>
 		<script src="submit.js"></script>
 		<a href="home.html">Back</a>
