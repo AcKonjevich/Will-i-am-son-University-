@@ -40,7 +40,7 @@
 			<br />
 	
 		<input type="SUBMIT" style="background-color:#002469; font-family: Gotham, 'Helvetica Neue', Helvetica, Arial, 'sans-serif'; color: white" value="SUBMIT" onclick="displayInfo()">
-		<button onclick="document.location='homepage.html'" style="background-color:#002469; font-family: Gotham, 'Helvetica Neue', Helvetica, Arial, 'sans-serif'; color: white">HOME PAGE</button>
+		<button onclick="document.location='home.html'" style="background-color:#002469; font-family: Gotham, 'Helvetica Neue', Helvetica, Arial, 'sans-serif'; color: white">HOME PAGE</button>
 	</form>
 	
 	<script>
