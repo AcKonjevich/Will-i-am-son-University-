@@ -2,6 +2,7 @@ function checkName() {
     var firstName = document.getElementById("first");
     var lastName = document.getElementById("last");
     var department = document.getElementById("department");
+    var rank = document.getElementById("rank");
     var email = document.getElementById("email");
     var pos = email.value.search (/^[A-Za-z]{3}\d{3}@marietta\.edu$/)
 
@@ -25,11 +26,9 @@ function checkName() {
         return false;
     }
 
-    else if (department.value != "") {
-        if (!isNaN(department.value)) {
+    else if (department.value != "" && !isNaN(department.value)) {
         alert("Department must be a string");
         return false;
-        }
     }
 
     else if (pos != 0) {
@@ -38,6 +37,7 @@ function checkName() {
     }
 
     else {
+        alert("Name: " + firstName.value + " " + lastName.value + "\nDepartment: " + department.value + "\nRank: " + rank.value + "\nEmail: " + email.value);
         return true;
     }
 

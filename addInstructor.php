@@ -19,7 +19,7 @@
 			<input type="text" id="department"/></label><br>
 				
 			<label>Instructor's Rank<br>
-			<select>
+			<select id = "rank">
 				<option>Instructor</option>
 				<option>Assistant Professor</option>
 				<option>Associate Professor</option>
@@ -35,6 +35,6 @@
 			<input type="reset" name="reset" />
 		</form>
 		<script src="submit.js"></script>
-		<a href="homepage.html">Back</a>
+		<a href="home.html">Back</a>
     </body>
 </html>
