@@ -11,21 +11,47 @@
 <body>
     <h2 class ="bluestripe">Add Course</h2>
     <?php
-		include 'session.php';
+	session_start();
 
-		// Check if the user is an admin
-		if ($_SESSION["user"] != "Admin" && $_SESSION["user"] != "Instructor") {
-            header("Location: home.php");
-            exit();
+	// Check if the user is an admin
+	if (!isset($_SESSION["user"]) || $_SESSION["user"] !== "Admin") {
+		header("Location: home.php");
+		exit();
+	}
+
+	if ($_SERVER["REQUEST_METHOD"] === "POST") {
+		// Connect to the database
+		$db_host = "localhost";
+		$db_user = "username";
+		$db_password = "password";
+		$db_name = "database_name";
+		$db = mysqli_connect($db_host, $db_user, $db_password, $db_name);
+		if (!$db) {
+			die("Connection failed: " . mysqli_connect_error());
 		}
+
+		$code = mysqli_real_escape_string($db, $_POST['code']);
+		$title = mysqli_real_escape_string($db, $_POST['title']);
+		$department = mysqli_real_escape_string($db, $_POST['department']);
+		$credits = mysqli_real_escape_string($db, $_POST['credits']);
+
+		$query = "INSERT INTO courses (course_code, course_title, department, credits) VALUES ('$code', '$title', '$department', '$credits')";
+		if (mysqli_query($db, $query)) {
+			echo "<p class='success'>Course added successfully!</p>";
+		} else {
+			echo "<p class='error'>Error adding course: " . mysqli_error($db) . "</p>";
+		}
+
+		mysqli_close($db);
+	}
 	?>
     <form name="courseForm" id="courseForm">
         <label for="sem">Semester:</label>
         <select name="Semester" id="sem" required><br>
             <option value="blank"></option><br>
-            <option value="sum23">Summer</option><br>
-            <option value="fall23">Fall</option><br>
-            <option value="spring24">Spring</option><br>
+            <option value="Summer">Summer</option><br>
+            <option value="Fall">Fall</option><br>
+            <option value="Spring">Spring</option><br>
         </select>
         <input type="text" id="year" placeholder="year" min="4" maxlength="4" required><br>
 		<pre></pre>
@@ -107,11 +133,11 @@
 		<pre></pre>
 
         <label for="ifname">Instructor First Name:</label>
-        <input type="text" id="ifname" name="ifname" placeholder="ex. Robert" minlenght="2" maxlength="50" required><br>
+        <input type="text" id="ifname" name="ifname" placeholder="ex. Matt" minlenght="2" maxlength="50" required><br>
 		<pre></pre>
 
         <label for="ilname">Instructor Last Name:</label>
-        <input type="text" id="ilname" name="ilname" placeholder="ex. Van Camp" minlenght="2" maxlength="50" required><br>
+        <input type="text" id="ilname" name="ilname" placeholder="ex. Williamson" minlenght="2" maxlength="50" required><br>
 		<pre></pre>
 
         <label for="cap">Enrollment Cap:</label>
@@ -138,8 +164,8 @@
 
             function coursepValid(){
                 var coursepVal = document.getElementById("coursep").value;
-                var validCoursep = coursepVal.search(/^[A-Z]{4}/);
-                var validCoursep2 = coursepVal.search(/^[A-Z]{3}/);
+                var validCoursep = coursepVal.search(/^[A-Z]{4}$/);
+                var validCoursep2 = coursepVal.search(/^[A-Z]{3}$/);
                 if (Number(validCoursep) == -1 && Number(validCoursep2) == -1){
                     return false;
                 } else {
@@ -161,7 +187,7 @@
 
             function coursesValid(){
                 var coursesVal = document.getElementById("courses").value;
-                var validCourses = coursesVal.search(/^\d{2}/);
+                var validCourses = coursesVal.search(/^\d{2}$/);
                 if (Number(validCourses) == -1){
                     return false;
                 } else {
@@ -182,7 +208,7 @@
 
             function chValid(){
                 var chVal = document.getElementById("ch").value;
-                var validCh = chVal.search(/^\d{1}/);
+                var validCh = chVal.search(/^\d{1}$/);
                 if (Number(validCh) == -1){
                     return false;
                 }else if ( chVal < 1 || chVal > 4){
@@ -213,10 +239,10 @@
 
             function capValid(){	
                 var capVal = document.getElementById("cap").value;
-                var validCap = capVal.search(/^\d{2}/); 
+                var validCap = capVal.search(/^\d{2}$/); 
                 if (validCap == -1){
                     return false;
-                }else if(Number(capVal) >99){
+                }else if(Number(capVal) > 99){
                     return false;
                 } else {
                     return true; 
@@ -248,15 +274,44 @@
 
         document.getElementById("confirm").addEventListener("click", submitButton);
         function submitButton(){
-            if (Boolean(yearValid()) && Boolean(coursepValid()) && Boolean(coursenumValid()) && Boolean(coursesValid()) && Boolean(chValid()) && Boolean(ifnameValid()) && Boolean(ilnameValid()) && Boolean(capValid())){
-                alert("Information Submited:\nFirst Name: " + document.getElementById("ifname").value + "\nLast Name: " + document.getElementById("ilname").value +
-                "\nCourse Name: " + document.getElementById("coursen").value + "\nCourse Regristration: " + document.getElementById("coursep").value +", " 
-                + document.getElementById("course#").value + ", " + document.getElementById("courses").value + document.getElementById("ch").value +
-                document.getElementById("cap").value+ "\nDays offered: "+ document.getElementById("days").value + "\nSemester: "+ document.getElementById("sem").value + "\nYear: " + document.getElementById("year").value ); 
-            }
-            else
+            if (yearValid() == false)
             {
-                alert("Invalid information entered! Try again."); 
+                alert("Year Invalid");
+            }
+            else if(coursepValid() == false)
+            {
+                alert("Course Prefix Invalid");
+            }
+            else if(coursenumValid() == false)
+            {
+                alert("Course Number Invalid");
+            }
+            else if(coursesValid() == false)
+            {
+                alert("Course Section Invalid");
+            }
+            else if(chValid() == false)
+            {
+                alert("Credit Hours Invalid");
+            }
+            else if(ifnameValid() == false)
+            {
+                alert("Instructor First Name Invalid");
+            }
+            else if(ilnameValid() == false)
+            {
+                alert("Instructor Last Name Invalid");
+            }
+            else if(capValid() == false)
+            {
+                alert("Enrollment Cap Invalid");
+            }
+
+            else{
+                alert("Information Submited:\nInstructor First Name: " + document.getElementById("ifname").value + "\nInstructor Last Name: " + document.getElementById("ilname").value +
+                "\nCourse Name: " + document.getElementById("coursen").value + "\nCourse Registration: " + document.getElementById("coursep").value +" " 
+                + document.getElementById("course#").value + "-" + document.getElementById("courses").value + "\nCredit Hours: " + document.getElementById("ch").value +
+                "\nEnrollment Cap: " + document.getElementById("cap").value+ "\nDays offered: "+ document.getElementById("days").value + "\nSemester: "+ document.getElementById("sem").value + "\nYear: " + document.getElementById("year").value ); 
             }
             }
                
