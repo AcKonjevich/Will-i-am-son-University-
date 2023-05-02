@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>User Manual</title>
+		<meta charset="utf-8"/>
+		
+		<style>
+		p.ex {
+			max-width: 50%;
+		}
+		</style>
+    </head>
+    <body>
+	
+	<h1>User Manual</h1>
+	<pre>
+<a href = "#overview">Overview</a>
+<a href = "#htmlpages">HTML Pages</a>
+	<a href = "#homepage">Home Page</a>
+	<a href = "#enroll">Enroll Student</a>
+	<a href = "#instructor">Add Instructor</a>
+	<a href = "#addcourse">Add Course</a>
+	<a href = "#registercourse">Register Course</a>
+	<a href = "#dropcourse">Drop Course</a>
+	</pre>
+		
+	<h2 id = "overview">Overview</h2>
+		<p class = "ex">The course registration systems allows you to enroll students, add instructors, add courses, register a student into a course, and drop a student from a course.
+		From the home page, you can navigate to any form. As of now, these forms do not do anything.
+		</p>
+
+	<h2 id = "htmlpages">HTML Pages</h2>
+	
+	<h3 id = "homepage">Home Page</h3>
+		<p class = "ex">The home page consists of seven links that each transport the user to their desired webpage. The order of the links are Enroll Student, Add Instructor, Register Course, 
+		Drop Course, User Manual, and Programmer Manual. 
+		</p>
+	
+	<h3 id = "enroll">Enroll Student</h3>
+		<p class = "ex">The Enroll Student HTML page is a form that allows students to enroll in the institution. The form is made up of text files as well as a drop-down menu to select the 
+			student’s year. Each form is labeled to the left of the text field to help the user know what each field is meant to do. The user will start at the top of the page, fill out the 
+			appropriate forms, and click submit at the bottom. The user may also click the Home Button to return to the home page. Only the Student user and Admin user are able to use this page.
+		<ul>
+			<li>Form elements used:
+				<ul>
+					<li>Text</li>
+					<li>Button</li>
+					<li>Label</li>
+					<li>Drop Menu</li>
+				</ul>
+			</li>
+		</ul>
+		<ul>
+			<li>Text and button element IDs
+				<ul>
+					<li>Student's_First_Name</li>
+					<li>Student's_Last_Name</li>
+					<li>Year
+						<ul>
+							<li>Freshman</li>
+							<li>Sophomore</li>
+							<li>Junior</li>
+							<li>Senior</li>
+						</ul>
+					</li>
+					<li>Student's_Major</li>
+					<li>Student's_Email_Address</li>
+					<li>Buttons
+						<ul>
+							<li>SUBMIT</li>
+							<li>HOME BUTTON</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<ul>
+			<li>Data validation rules
+				<ul>
+					<li>Student's First Name
+						<ul>
+							<li>Required Field</li>
+							<li>Must be a string. Spaces are allowed</li>
+							<li>Error message:
+								<ul>
+									<li>"Please enter your first name"</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>Student's Last Name
+						<ul>
+							<li>Required Field</li>
+							<li>Must be a string. Spaces are allowed</li>
+							<li>Error message:
+								<ul>
+									<li>"Please enter your last name"</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>Student's Year (i.e., Freshman, Sophomore, Junior, Senior
+						<ul>
+							<li>No validation rules are necessary since this is a drop-down list.</li>
+						</ul>
+					</li>
+					<li>Student's Major
+						<ul>
+							<li>Not required</li>
+							<li>Must be a string. Spaces are allowed</li>
+						</ul>
+					</li>
+					<li>Student's Email Address
+						<ul>
+							<li>Required Field
+							<li>Must follow the format abc123@marietta.edu. The first three characters must be letters. The next three characters must be numbers. 
+								The email address must end with @marietta.edu.
+							</li>
+							<li>Error message:
+								<ul>
+									<li>"Please enter your email address"</li>
+								</ul>
+							</li>
+						</ul>
+					</li>	
+				</ul>
+			</li>
+		</ul>
+		</p>
+		
+	
+	<h3 id = "instructor">Add Instructor</h3>
+		<p class = "ex">The Add Instructor page is a web form that allows you to add an instructor by entering their first name, last name, department and email address. 
+			You must also choose a rank for the instructor from the dropdown menu. Only the Admin user and Student user can use this page.
+			<ul>
+				<li>First Name
+					<ul>
+						<li>Required Field - Error: Please enter a first name</li>
+						<li>Must not be a number - Error: First name must be a string</li>
+					</ul>
+				</li>
+				<li>Last Name
+					<ul>
+						<li>Required Field - Error: Please enter a last name</li>
+						<li>Must not be a number - Error: Last name must be a string</li>
+					</ul>
+				</li>
+				<li>Department
+					<ul>
+						<li>Must not be a number - Error: Department must be a string</li>
+					</ul>
+				</li>
+				<li>Email Address
+					<ul>
+						<li>Email must be in the form sssddd@marietta.edu where s are letters and d are digits - Error: Email in incorrect form</li>
+					</ul>
+				</li>
+			</ul>
+		The back button at the bottom of the page will return you to the home page.
+		</p>
+
+	<h3 id = "addcourse">Add Course</h3>
+		<p class = "ex">The add course HTML page is a form which allows users to add a course to their schedule.  The form is made up of text files mainly as well as dropdown menus to select 
+		answers with multiple options such as day, time, and semester of each course.  Each of these fields are held within a form which sits inside the body and a header is 
+		placed at the top to help the user know where they are. Start from the top of the form and fill in the appropriate information as you go down until you are ready to submit. 
+		Be sure to fill in all fields. Only the Admin user and Student user can use this page.
+		</p>
+	
+	<h3 id = "registercourse">Register Course</h3>
+		<p class = "ex">The Register Course page allows you to add a course for a student. This is done by inputting a student's first and last name. You then need to select a 
+			semester and year from the dropdown menu. You then enter the course prefix, number, and section. The submit button will see if your inputs are valid. Only the Admin user and Student user can use this page.
+			<ul>
+				<li>First Name
+					<ul>
+						<li>Required Field - Error: Please enter a first name</li>
+						<li>Must not be a number - Error: First name must be a string</li>
+					</ul>
+				</li>
+				<li>Last Name
+					<ul>
+						<li>Required Field - Error: Please enter a last name</li>
+						<li>Must not be a number - Error: Last name must be a string</li>
+					</ul>
+				</li>
+				<li>Year
+					<ul>
+						<li>Required Field - Error: Please enter a year</li>
+						<li>Must consist of four digits - Error: Year must consist of four digits</li>
+						<li>Year cannot be before 2023 - Error: Year cannot be before 2023</li>
+					</ul>
+				</li>
+				<li>Course Prefix
+					<ul>
+						<li>Required Field - Error: Please enter a course prefix</li>
+						<li>Must have either three of four digits-  Error: Course prefix can only be 3 or 4 capital letters</li>
+					</ul>
+				</li>
+				<li>Course Number
+					<ul>
+						<li>Required Field - Error: Please enter a course numbe</li>
+						<li>Must be a three digit number no larger than 499 - Error: Course number must be a three digit number less than 500
+						</li>
+					</ul>
+				</li>
+				<li>Course Section
+					<ul>
+						<li>Required Field - Error: Please enter a course section</li>
+						<li>Must consist of exactly two digits - Error: Course section must be a two digit number</li>
+					</ul>
+				</li>
+			</ul>
+			The back button at the bottom of the page will return you to the home page.
+		</p>
+		
+	<h3 id = "dropcourse">Drop Course</h3>
+		<p class = "ex">This page consists of six text boxes for the user to fill in their first name, last name, semester, course prefix, course number, and course section for the class they wish 
+		to drop. None of the text boxes store data currently but that will change in the future. There is also a submit button to submit future information as well as a return home 
+		link attop of the page to transport the user back to the home page. Only the Admin user and Student user can use this page.
+		</p>
+	
+	<a href="homepage.html">Back</a>	
+	
+	<h3 id = "indexx.php"></h3>Login page</h3>
+		<p class = "ex">This page is the login page that consists of a text box and validates the user by determining if they are a Student, Instructor, or Admin.
+		All users must pass through this page in order to access the rest of the website implying that all types of user are able to use it.
+		</p>
+
+	<h3 id = "logout.php">Logout Page</h3>
+	<p class = "ex">This page is the logout page that can be accessed by all types of users. It is used to log out the user after a session time-out or
+	if the user manually logs out.
+	</p>
+
+	<h3 id = "ViewCourses_TaughtbyInstructor">ViewCourses_TaughtbyInstructor</h3>
+	<p class = "ex">This page can be accessed by both admin users and instructor users. 
+		This page is to view the courses taught by the instructor.</p>
+	
+	<h3 id = "ViewStudents_RegistredSemester">ViewStudents_RegistredSemester</h3>
+	<p class = "ex">This page can be accessed by both student and admin users. This page is used to view the students registered for the upcoming
+		semesters.
+	</p>
+    </body>
+</html>
