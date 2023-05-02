@@ -1,53 +1,96 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Enroll Student</title>
-<script src="Validation.js; style.css"></script>
-<link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enroll Student</title>
+    <script src="Validation.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-	<h2 class ="bluestripe">Enroll Student</h2>
-	<?php
-		include 'session.php';
+    <h1 class ="bluestripe">Enroll Student</h1>
 
-		// Check if the user is an admin
-		if ($_SESSION["user"] != "Admin") {
-		header("Location: home.php");
-		exit();
-		}
-	?>
-	<form>
-		<label for="First_Name">Student’s First Name: </label>
-		<input type="text" id="First_Name" name="Student's_First_Name">
-			<br />
-			<pre></pre>
-		<label for="Last_Name">Student’s Last Name: </label>
-		<input type="text" id="Last_Name" name="Student's_Last_Name">
-			<br />
-			<pre></pre>
-		<label for="Year">Student's Year:</label>
-		<select name="Year" id="Year">
+    <?php
+    session_start();
+
+    // Check if the user is an admin
+    if (!isset($_SESSION["user"]) || $_SESSION["user"] !== "Admin") {
+        header("Location: home.php");
+        exit();
+    }
+
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        // Connect to the database
+        $db_host = "localhost";
+        $db_user = "username";
+        $db_password = "password";
+        $db_name = "database_name";
+        $db = mysqli_connect($db_host, $db_user, $db_password, $db_name);
+        if (!$db) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
+
+        $fname = mysqli_real_escape_string($db, $_POST['fname']);
+        $lname = mysqli_real_escape_string($db, $_POST['lname']);
+        $year = mysqli_real_escape_string($db, $_POST['year']);
+        $major = mysqli_real_escape_string($db, $_POST['major']);
+        $email = mysqli_real_escape_string($db, $_POST['email']);
+
+        $query = "INSERT INTO students (first_name, last_name, year, major, email) VALUES ('$fname', '$lname', '$year', '$major', '$email')";
+        if (mysqli_query($db, $query)) {
+            echo "<p class='success'>Student record added successfully!</p>";
+        } else {
+            echo "<p class='error'>Error adding student record: " . mysqli_error($db) . "</p>";
+        }
+
+        mysqli_close($db);
+    }
+    ?>
+	
+	<form method="post" onsubmit="return validateEnrollStudent()">
+	  <div class="form-group">
+		<label for="fname">Student’s First Name:</label>
+		<input type="text" id="fname" name="fname" class="form-control" required>
+		<span id="fname_error" class="error"></span>
+	  </div>
+	  <pre></pre>
+
+	  <div class="form-group">
+		<label for="lname">Student’s Last Name:</label>
+		<input type="text" id="lname" name="lname" class="form-control" required>
+		<span id="lname_error" class="error"></span>
+	  </div>
+	  <pre></pre>
+
+	  <div class="form-group">
+		<label for="year">Student’s Year:</label>
+		<select id="year" name="year" class="form-control" required>
+		  <option value="">-- Select year --</option>
 		  <option value="Freshman">Freshman</option>
 		  <option value="Sophomore">Sophomore</option>
 		  <option value="Junior">Junior</option>
 		  <option value="Senior">Senior</option>
 		</select>
-			<br />
-			<pre></pre>
-		<label for="Major">Student’s Major:</label> 
-		<input type="text" id="Major" name="Student's_Major">
-			<br />
-			<pre></pre>
-		<label for="Email_Address">Student’s Email Address: </label>
-		<input type="text" id="Email_Address" name="Student's_Email_Address">
-			<br />
-			<pre></pre>
-			<br />
-	
-		<input type="SUBMIT" style="background-color:#002469; font-family: Gotham, 'Helvetica Neue', Helvetica, Arial, 'sans-serif'; color: white" value="SUBMIT" onclick="displayInfo()">
+		<span id="year_error" class="error"></span>
+	  </div>
+	  <pre></pre>
+
+	  <div class="form-group">
+		<label for="major">Student’s Major:</label>
+		<input type="text" id="major" name="major" class="form-control" required>
+		<span id="major_error" class="error"></span>
+	  </div>
+	  <pre></pre>
+
+	  <div class="form-group">
+		<label for="email">Student’s Email Address:</label>
+		<input type="email" id="email" name="email" class="form-control" required>
+		<span id="email_error" class="error"></span>
+	  </div>
+	  <pre></pre>
+
+	  <button type="submit" class="btn btn-primary">Enroll</button>
 	</form>
 	<?php include 'footer.php';?>
 	
