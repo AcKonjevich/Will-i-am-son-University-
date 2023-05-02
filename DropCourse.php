@@ -1,64 +1,65 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <h1><title>Drop Course</title></h1>
-        <script type="text/javascript"></script>
-        <link rel="stylesheet" href="style.css">
+<head>
+    <h1><title>Drop Course</title></h1>
+    <script type="text/javascript"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-    </head>
-    <body>
-        <h2 class = "bluestripe">Drop Course</h2>
-        <?php
-			include 'session.php';
+<body>
+	<h1 class = "bluestripe">Drop Course</h1>
+    <?php
+		include 'session.php';
 
-			// Check if the user is an admin
-			if ($_SESSION["user"] != "Admin" && $_SESSION["user"] != "Student") {
-				header("Location: home.php");
-				exit();
-			}
-		?>
-        <form>
-            <label for="first_name">First Name:</label>
-            <input type="text" id="first_name" name="first_name"><br>
-			<pre></pre>
+		// Check if the user is an admin
+		if ($_SESSION["user"] != "Admin" && $_SESSION["user"] != "Student") {
+			header("Location: home.php");
+			exit();
+		}
+	?>
+        
+	<form>
+		<label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name"><br>
+		<pre></pre>
             
-            <label for="last_name">Last Name:</label>
-            <input type="text" id="last_name" name="last_name"><br>
-			<pre></pre>
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name"><br>
+		<pre></pre>
             
-            <label>Semester:</label>
-            <select = name="semester" id="semester">
-                <option>Spring</option>
-                <option>Summer</option>
-                <option>Fall</option>
-            </select><br>
-			<pre></pre>
+        <label>Semester:</label>
+        <select = name="semester" id="semester">
+			<option>Spring</option>
+            <option>Summer</option>
+            <option>Fall</option>
+        </select><br>
+		<pre></pre>
             
-            <label>Year:</label>
-            <select = name="year" id="year">
-                <option>2023</option>
-                <option>2024</option>
-                <option>2025</option>
-                <option>2026</option>
-            </select><br>
-			<pre></pre>
+        <label>Year:</label>
+        <select = name="year" id="year">
+			<option>2023</option>
+            <option>2024</option>
+            <option>2025</option>
+            <option>2026</option>
+        </select><br>
+		<pre></pre>
             
-            <label for="course_prefix">Course Prefix:</label>
-            <input type="text" id="course_prefix" name="course_prefix"><br>
-			<pre></pre>
+        <label for="course_prefix">Course Prefix:</label>
+        <input type="text" id="course_prefix" name="course_prefix"><br>
+		<pre></pre>
             
-            <label for="course_number">Course Number:</label>
-            <input type="text" id="course_number" name="course_number"><br>
-			<pre></pre>
+        <label for="course_number">Course Number:</label>
+        <input type="text" id="course_number" name="course_number"><br>
+		<pre></pre>
             
-            <label for="course_section">Course Section:</label>
-            <input type="text" id="course_section" name="course_section"><br>
-			<pre></pre>
-			<pre></pre>
+        <label for="course_section">Course Section:</label>
+        <input type="text" id="course_section" name="course_section"><br>
+		<pre></pre>
+		<pre></pre>
             
-            <input type="SUBMIT" name="SUBMIT" class = "mc" id="submit">
-        </form>
-		<?php include 'footer.php';?>
+        <input type="SUBMIT" name="SUBMIT" class = "mc" id="submit">
+   </form>
+   <?php include 'footer.php';?>
         <script>
             function validate_First_Name() {
                 var First_Name = document.getElementById("first_name");
@@ -142,5 +143,5 @@
 
 
         </script>
-    </body>
+</body>
 </html>
