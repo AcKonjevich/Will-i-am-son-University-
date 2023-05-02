@@ -11,13 +11,39 @@
 <body>
     <h2 class ="bluestripe">Add Course</h2>
     <?php
-		include 'session.php';
+	session_start();
 
-		// Check if the user is an admin
-		if ($_SESSION["user"] != "Admin" && $_SESSION["user"] != "Instructor") {
-            header("Location: home.php");
-            exit();
+	// Check if the user is an admin
+	if (!isset($_SESSION["user"]) || $_SESSION["user"] !== "Admin") {
+		header("Location: home.php");
+		exit();
+	}
+
+	if ($_SERVER["REQUEST_METHOD"] === "POST") {
+		// Connect to the database
+		$db_host = "localhost";
+		$db_user = "username";
+		$db_password = "password";
+		$db_name = "database_name";
+		$db = mysqli_connect($db_host, $db_user, $db_password, $db_name);
+		if (!$db) {
+			die("Connection failed: " . mysqli_connect_error());
 		}
+
+		$code = mysqli_real_escape_string($db, $_POST['code']);
+		$title = mysqli_real_escape_string($db, $_POST['title']);
+		$department = mysqli_real_escape_string($db, $_POST['department']);
+		$credits = mysqli_real_escape_string($db, $_POST['credits']);
+
+		$query = "INSERT INTO courses (course_code, course_title, department, credits) VALUES ('$code', '$title', '$department', '$credits')";
+		if (mysqli_query($db, $query)) {
+			echo "<p class='success'>Course added successfully!</p>";
+		} else {
+			echo "<p class='error'>Error adding course: " . mysqli_error($db) . "</p>";
+		}
+
+		mysqli_close($db);
+	}
 	?>
     <form name="courseForm" id="courseForm">
         <label for="sem">Semester:</label>
